@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Happy Holi!!!</title>
+	<style>
+		body {
+			text-align: center;
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			color: #FF6347; /* Colorful text */
+			margin-top: 30px;
+		}
+		img {
+			margin-top: 0px;
+			cursor: pointer;
+		}
+		.gif-container {
+			display: none;
+			margin-top: 0px;
+		}
+		p {
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Happy Holi!!!</h1>
+	<img src="static.gif" alt="Please click on the Picture" width="420"
+	height="420" onclick="showGif(this)">
+	<p id="clickText">Please click on the Picture</p>
+	<div class="gif-container">
+		<img src="giphy.gif" alt="Holi GIF" width="420"
+		height="420">
+		<p id="wish"></p>
+		<p id="signature">- Garvit Kulshrestha</p>
+	</div>
+
+	<script>
+		const wishes = [
+			"Hope your dreams come true soon",
+			"Here's to seizing every opportunity that comes your way.",
+			"Wishing you the courage to chase your dreams fearlessly.",
+			"May your days be brightened by the warmth of love and friendship.",
+			"Here's to embracing change and embracing growth.",
+			"Wishing you inner peace and serenity amidst life's chaos.",
+			"May you be blessed with abundance in every aspect of life.",
+			"Here's to a year filled with love, laughter, and adventure.",
+			"Wishing you strength to overcome challenges and emerge victorious.",
+			"May your heart be filled with gratitude for life's blessings.",
+			"Here's to living life to the fullest and embracing every moment.",
+			"Wishing you clarity of mind and purpose in all your endeavors.",
+			"May you find inspiration in the beauty of the world around you.",
+			"Here's to following your passions and chasing your dreams.",
+			"Wishing you happiness that knows no bounds.",
+			"May you be surrounded by positivity and good vibes always.",
+			"Here's to new opportunities and endless possibilities.",
+			"Wishing you success in all your future endeavors.",
+			"May you find fulfillment and contentment in everything you do.",
+			"Here's to health, wealth, and happiness.",
+			"Wishing you strength to overcome any obstacle that comes your way.",
+			"May you be blessed with abundant love and joy.",
+			"Here's to making every moment count and cherishing the memories.",
+			"Wishing you clarity of vision and purpose in the year ahead.",
+			"May you find peace and happiness in the little things.",
+			"Here's to embracing the journey and enjoying the ride.",
+			"Wishing you courage to face challenges with grace and resilience.",
+			"May you be surrounded by love and positivity always.",
+			"Here's to achieving your goals and reaching new heights.",
+			"Wishing you success in all your endeavors, big and small.",
+			"May your days be filled with sunshine and laughter.",
+			"Here's to making your dreams a reality.",
+			"Wishing you strength to overcome obstacles and achieve greatness.",
+			"May you find happiness in every moment and every breath.",
+			"Here's to a future filled with endless possibilities and opportunities."
+		];
+
+		function showGif(img) {
+			const gifContainer = document.querySelector('.gif-container');
+			gifContainer.style.display = 'block';
+			img.style.display = 'none'; // Hide the image
+			document.getElementById('clickText').style.display = 'none'; // Hide the "Click on the Picture" text
+			const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+			document.getElementById('wish').textContent = randomWish;
+
+			// Play audio
+			const audio = document.querySelector('audio');
+			audio.play();
+		}
+	</script>
+
+<audio autoplay loop>
+
+	<source src="Holi.ogg" type="audio/ogg">
+  
+	<source src="Holi.mp3" type="audio/mpeg">
+  
+  Your browser does not support the audio element.
+  
+  </audio>
+  
+
+
+</body>
+</html>
